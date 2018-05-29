@@ -1,0 +1,25 @@
+body {
+	margin:0;
+	padding:0;
+	position: absolute;
+	background: #2f343f;
+	color: #f3f4f5;	
+	width:100%;
+}
+a {
+	color: #f3f4f5 !important;	
+}
+
+#container {
+	margin: 0 auto;
+	width: 70%;
+	position: relative;
+	display: block;
+}
+#search {
+	width:100%;
+	padding:20px;
+}
+.tags {
+	color: #676E7D;
+}
