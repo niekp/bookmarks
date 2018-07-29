@@ -11,7 +11,7 @@ function keep_focus() {
 }
 
 function getBookmarks() {
-	$.get("/bookmarks.html", function (data) {
+	$.get("bookmarks.html", function (data) {
 		parseBookmarks(data);
 	}).fail(function () {
 		$("#container").html("Error loading bookmarks");
