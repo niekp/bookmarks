@@ -39,6 +39,15 @@ function parseBookmarks(bookmarks_html) {
 	searchBookmark('');
 }
 
+function exportBookmarks(){
+	var txt = '';
+	$(bookmarks).each(function (k, bookmark) {
+		txt += bookmark.link + ' | ' + bookmark.text + ' (' + bookmark.tags + ')<br/>';
+	});
+	w = window.open();
+	w.document.body.innerHTML = txt;
+}
+
 function compareBookmark(a,b) {
 	if (a.text < b.text)
 		return -1;
@@ -50,6 +59,9 @@ function compareBookmark(a,b) {
 var top_url = '';
 function searchBookmark(search, e) {
 	if (e != undefined) {
+		if (search == 'export') {
+			exportBookmarks();
+		}
 		if (e.keyCode == 13 && top_url != '') {
 			window.open(top_url, '_blank');
 		} else if (e.keyCode >= 49 && e.keyCode <= 57) {
